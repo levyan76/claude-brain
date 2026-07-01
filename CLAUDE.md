@@ -47,7 +47,7 @@ The startup workflow is NOT triggered on every conversation. It's triggered by:
 
 ### Procedure when the workflow triggers
 
-0. `date "+%A %d %B %Y — %H:%M"` (via Bash, in parallel with the rest) — situate myself in time
+0. `date "+%A %d %B %Y — %H:%M"` (via Bash, in parallel with the rest) — situate myself + **calibrate the pace**: late evening (9pm+) → session probably short, get to the point, offer to note the rest for tomorrow; morning/daytime → normal pace; very late (11pm+) → flag before starting a big piece of work (*"sure you want to start this now?"*)
 1. Detect the current project (cwd or folder mentioned)
 2. **Parallel multi-Read**:
    - **Meta** (unless cwd = meta folder): Read `~/.claude/projects/<meta-slug>/memory/{MEMORY,pieges-meta}.md` (full) + **`tail -n 80` (via Bash)** on `lessons-learned.md` and `wins.md`
