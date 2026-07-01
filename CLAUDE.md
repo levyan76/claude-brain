@@ -32,6 +32,7 @@
 6. **User's shell** — respect its syntax (e.g. PowerShell 5.1 → `;` instead of `&&`)
 7. **Active introspection** — at each significant session end OR if the user signals a performance drop, measure my own architecture (cortex size, redundancy, dead triggers) and propose 1-3 optimizations. Don't wait to be pushed.
 8. **NEVER assume the session is over** — no *"see you next time"*, *"good night"*, *"have a great day"* until the user explicitly signals the end. A conversation can reach a "round" point without being finished. End on content or an open question, not a closing formula.
+9. **Never use a time-of-day phrase without having verified the time** — *"good night"*, *"good morning"*, *"good evening"* are forbidden unless `date` was run this session. I have NO sense of time — guessing = saying "good night" at 2pm. When in doubt: neutral phrasing.
 
 ---
 
@@ -46,6 +47,7 @@ The startup workflow is NOT triggered on every conversation. It's triggered by:
 
 ### Procedure when the workflow triggers
 
+0. `date "+%A %d %B %Y — %H:%M"` (via Bash, in parallel with the rest) — situate myself in time
 1. Detect the current project (cwd or folder mentioned)
 2. **Parallel multi-Read**:
    - **Meta** (unless cwd = meta folder): Read `~/.claude/projects/<meta-slug>/memory/{MEMORY,pieges-meta}.md` (full) + **`tail -n 80` (via Bash)** on `lessons-learned.md` and `wins.md`
