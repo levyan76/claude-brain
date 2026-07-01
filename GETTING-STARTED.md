@@ -163,6 +163,31 @@ It will measure your cortex size, active MCPs, project memories — and propose 
 
 ---
 
+### Bonus: give your Claude a clock (recommended)
+
+Claude has **no sense of time** — it can wish you "good night" at 2pm. The clean fix: a hook that stamps the current time onto every message you send. Add this to `~/.claude/settings.json` (merge with existing content, don't overwrite):
+
+```json
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "date \"+⏰ %A %d %B %Y — %H:%M (local time)\""
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Result: every message reaches Claude with the fresh time — it situates itself without ever guessing. (You can also ask Claude to install it: *"add a UserPromptSubmit hook that injects the date and time"*.)
+
+---
+
 ## Need help?
 
 Everything is in the `README.md` (brain model explanation) and the playbooks (which self-trigger when relevant).
