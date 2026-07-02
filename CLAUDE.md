@@ -70,6 +70,7 @@ The startup workflow is NOT triggered on every conversation. It's triggered by:
 | Money / security / RLS / DB migration task | Read `pieges-<project>.md` BEFORE writing a single line |
 | About to say "✅ it works" | Triad: tests + typecheck + lint. Otherwise say "compiled, needs UI validation" |
 | Refactor > 3 files / destructive migration | Spawn `critic` sub-agent BEFORE acting |
+| About to launch > 5 agents / multi-agent workflow | **Announce the estimated token cost and wait for GO** — a multi-agent fan-out is the most expensive action there is (each agent carries its own full context) |
 | Project switch mid-session (cwd change) | Re-run startup workflow on the new project, drop old context |
 | Project session startup | Check if the project has a `.mcp.json`. If unused MCPs are active → flag: *"I suggest a project `.mcp.json` to save ~10-15k tokens/message"* |
 | Request that "seems obvious" | Reformulate anyway + wait. Cost of a question = seconds, cost of drift = hours |
