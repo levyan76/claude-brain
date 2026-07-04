@@ -1,6 +1,8 @@
 # Claude Code "Brain Model" — Cortex + Triggers + Playbooks
 
-> A lightweight pattern to fix bloated `CLAUDE.md` files in Claude Code, cut token cost per message by 50-80%, and stay productive across many projects.
+> A lightweight pattern to fix bloated `CLAUDE.md` files in Claude Code: **-77% on your auto-loaded config file** (measured: 414 → 99 lines, ~4-5k tokens saved per message), while staying productive across many projects.
+>
+> Transparency: this gain applies to the auto-loaded `CLAUDE.md`. Your total per-message cost also includes active connectors/MCPs (often 15-20k tokens — the `auto-introspection.md` playbook covers that audit) and above all your usage patterns (multi-agent fan-outs are the single most expensive action there is — hence the guardrail in the trigger map).
 
 **Measured impact on my setup**: `CLAUDE.md` went from **414 lines → 99 lines**, cutting ~4-5k tokens **per message** with zero loss of capability. Investment paid back after ~10 messages.
 

@@ -7,7 +7,7 @@
 ## What is this exactly?
 
 A **configuration template** for Claude Code that:
-- **Saves your tokens** (~50-80% less per message)
+- **Saves your tokens** (-77% on the config file auto-loaded with every message; the introspection playbook then helps you hunt the other cost sources — connectors, MCPs, fan-outs)
 - **Keeps memory** between sessions (Claude remembers you, your projects, your mistakes/wins)
 - **Personalizes itself**: on first launch, Claude asks you 10 questions and adapts the cortex to you
 
